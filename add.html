@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản Lý Tài Chính - Thêm Giao Dịch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Quản Lý Tài Chính</div>
+      <nav>
+        <a href="index.html">Tổng Quan</a>
+        <a href="transactions.html">Giao Dịch</a>
+        <a href="add.html" class="active">Thêm Giao Dịch</a>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+    <main>
+      <div class="topbar">
+        <h1>Thêm Giao Dịch</h1>
+        <div class="topbar-actions">
+          <div class="avatar"></div>
+        </div>
+      </div>
+      <!-- Form Section -->
+      <section class="card form-card">
+        <form>
+          <div class="grid-2">
+            <div>
+              <label for="amount">Số Tiền</label>
+              <input type="number" id="amount" class="input" placeholder="Nhập số tiền">
+            </div>
+            <div>
+              <label for="type">Loại</label>
+              <select id="type" class="input">
+                <option>Thu</option>
+                <option>Chi</option>
+              </select>
+            </div>
+            <div>
+              <label for="category">Danh Mục</label>
+              <select id="category" class="input">
+                <option>Ăn uống</option>
+                <option>Tiện ích</option>
+                <option>Sức khỏe</option>
+                <option>Du lịch</option>
+                <option>Giáo dục</option>
+                <option>Thu nhập</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div>
+              <label for="date">Ngày</label>
+              <input type="date" id="date" class="input">
+            </div>
+            <div>
+              <label for="description">Mô Tả</label>
+              <input type="text" id="description" class="input" placeholder="Nhập mô tả">
+            </div>
+            <div>
+              <label for="payment">Phương Thức Thanh Toán</label>
+              <select id="payment" class="input">
+                <option>Tiền mặt</option>
+                <option>Thẻ</option>
+                <option>Chuyển khoản</option>
+                <option>Khác</option>
+              </select>
+            </div>
+            <div>
+              <label for="status">Trạng Thái</label>
+              <select id="status" class="input">
+                <option>Đã thanh toán</option>
+                <option>Chờ xử lý</option>
+                <option>Thất bại</option>
+              </select>
+            </div>
+            <div>
+              <label for="note">Ghi Chú</label>
+              <textarea id="note" class="input" rows="2" placeholder="Nhập ghi chú"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Lưu Giao Dịch</button>
+            <a href="transactions.html" class="btn btn-outline">Hủy</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

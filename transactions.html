@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản Lý Tài Chính - Giao Dịch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Quản Lý Tài Chính</div>
+      <nav>
+        <a href="index.html">Tổng Quan</a>
+        <a href="transactions.html" class="active">Giao Dịch</a>
+        <a href="add.html">Thêm Giao Dịch</a>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+    <main>
+      <div class="topbar">
+        <h1>Giao Dịch</h1>
+        <div class="topbar-actions">
+          <div class="avatar"></div>
+        </div>
+      </div>
+      <!-- Filter Row -->
+      <section class="card filter-row">
+        <input type="text" class="input" placeholder="Tìm kiếm...">
+        <select class="input">
+          <option>Tất cả</option>
+          <option>Thu</option>
+          <option>Chi</option>
+        </select>
+        <select class="input">
+          <option>Tất cả</option>
+          <option>Đã thanh toán</option>
+          <option>Chờ xử lý</option>
+          <option>Thất bại</option>
+        </select>
+        <button class="btn btn-outline">Xuất</button>
+      </section>
+      <!-- Table Section -->
+      <div class="table-wrap card">
+        <table>
+          <thead>
+            <tr>
+              <th>Ngày</th>
+              <th>Mô tả</th>
+              <th>Danh mục</th>
+              <th>Loại</th>
+              <th>Số tiền</th>
+              <th>Trạng thái</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2026-01-10</td>
+              <td>Lương</td>
+              <td>Thu nhập</td>
+              <td><span class="type-badge income">Thu</span></td>
+              <td class="income">+ $2,000</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-09</td>
+              <td>Mua sắm</td>
+              <td>Ăn uống</td>
+              <td><span class="type-badge expense">Chi</span></td>
+              <td class="expense">- $120</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-08</td>
+              <td>Tiền điện</td>
+              <td>Tiện ích</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $60</td>
+              <td><span class="badge pending">Chờ xử lý</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-07</td>
+              <td>Làm thêm</td>
+              <td>Thu nhập</td>
+              <td><span class="badge income">Thu</span></td>
+              <td class="income">+ $500</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-06</td>
+              <td>Phòng gym</td>
+              <td>Sức khỏe</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $40</td>
+              <td><span class="badge failed">Thất bại</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-05</td>
+              <td>Sách</td>
+              <td>Giáo dục</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $30</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-04</td>
+              <td>Quà tặng</td>
+              <td>Thu nhập</td>
+              <td><span class="badge income">Thu</span></td>
+              <td class="income">+ $100</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-03</td>
+              <td>Đi lại</td>
+              <td>Du lịch</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $15</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-02</td>
+              <td>Internet</td>
+              <td>Tiện ích</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $25</td>
+              <td><span class="badge pending">Chờ xử lý</span></td>
+            </tr>
+            <tr>
+              <td>2026-01-01</td>
+              <td>Ăn ngoài</td>
+              <td>Ăn uống</td>
+              <td><span class="badge expense">Chi</span></td>
+              <td class="expense">- $50</td>
+              <td><span class="badge paid">Đã thanh toán</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

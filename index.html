@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quản Lý Tài Chính - Tổng Quan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">Quản Lý Tài Chính</div>
+      <nav>
+        <a href="index.html" class="active">Tổng Quan</a>
+        <a href="transactions.html">Giao Dịch</a>
+        <a href="add.html">Thêm Giao Dịch</a>
+      </nav>
+    </aside>
+    <!-- Main Content -->
+    <main>
+      <div class="topbar">
+        <h1>Tổng Quan</h1>
+        <div class="topbar-actions">
+          <a href="add.html" class="btn btn-primary">+ Thêm Giao Dịch</a>
+          <div class="avatar"></div>
+        </div>
+      </div>
+      <!-- Cards Section -->
+      <section class="grid-3">
+        <div class="card">
+          <div class="card-title">Tổng Thu</div>
+          <div class="card-value income">$5,200</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Tổng Chi</div>
+          <div class="card-value expense">$3,100</div>
+        </div>
+        <div class="card">
+          <div class="card-title">Số Dư</div>
+          <div class="card-value">$2,100</div>
+        </div>
+      </section>
+      <!-- Chart Section -->
+      <section class="card chart-card">
+        <div class="card-title">Chi Tiêu Trong Tuần</div>
+        <div class="bar-chart">
+          <div class="bar-group">
+            <div class="bar expense" style="height: 60px;"></div>
+            <div class="bar-label">Thứ 2</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 90px;"></div>
+            <div class="bar-label">Thứ 3</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 40px;"></div>
+            <div class="bar-label">Thứ 4</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 110px;"></div>
+            <div class="bar-label">Thứ 5</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 80px;"></div>
+            <div class="bar-label">Thứ 6</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 50px;"></div>
+            <div class="bar-label">Thứ 7</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar expense" style="height: 70px;"></div>
+            <div class="bar-label">CN</div>
+          </div>
+        </div>
+      </section>
+      <!-- Recent Transactions Section -->
+      <section class="card">
+        <div class="card-title">Giao Dịch Gần Đây</div>
+        <ul class="transaction-list">
+          <li>
+            <span class="tx-name">Lương</span>
+            <span class="tx-date">2026-01-10</span>
+            <span class="tx-amount income">+ $2,000</span>
+            <span class="badge paid">Đã thanh toán</span>
+          </li>
+          <li>
+            <span class="tx-name">Mua sắm</span>
+            <span class="tx-date">2026-01-09</span>
+            <span class="tx-amount expense">- $120</span>
+            <span class="badge paid">Đã thanh toán</span>
+          </li>
+          <li>
+            <span class="tx-name">Tiền điện</span>
+            <span class="tx-date">2026-01-08</span>
+            <span class="tx-amount expense">- $60</span>
+            <span class="badge pending">Chờ xử lý</span>
+          </li>
+          <li>
+            <span class="tx-name">Làm thêm</span>
+            <span class="tx-date">2026-01-07</span>
+            <span class="tx-amount income">+ $500</span>
+            <span class="badge paid">Đã thanh toán</span>
+          </li>
+          <li>
+            <span class="tx-name">Phòng gym</span>
+            <span class="tx-date">2026-01-06</span>
+            <span class="tx-amount expense">- $40</span>
+            <span class="badge failed">Thất bại</span>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
