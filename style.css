@@ -1,3 +1,36 @@
+/* Badge cho cột Loại (Thu/Chi) - Đảm bảo chữ luôn hiển thị rõ ràng */
+.type-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 1;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  letter-spacing: 0.2px;
+  background: #222b3a;
+  margin: 0 auto;
+  color: inherit;
+  opacity: 1;
+  visibility: visible;
+  text-indent: 0;
+  overflow: visible;
+}
+.type-badge.income {
+  background: #22C55E;
+  color: #111827;
+}
+.type-badge.expense {
+  background: #EF4444;
+  color: #fff;
+}
+/* Đảm bảo .income/.expense chỉ dùng cho số tiền, không ảnh hưởng badge loại */
+td.income { color: var(--success); }
+td.expense { color: var(--danger); }
 /* Badge cho cột Loại (Thu/Chi) */
 .type-badge {
   display: inline-block;
@@ -220,25 +253,29 @@ main {
   color: var(--bg);
 }
 
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: 0.2em 0.9em;
-  border-radius: 999px;
-  font-size: 0.95em;
-  font-weight: 500;
-  background: var(--neutral);
-  color: var(--bg);
-  margin-left: 0.5em;
-  vertical-align: middle;
+
+/* Badge dùng chung cho cả cột Loại và Trạng thái (chuẩn hóa đồng bộ) */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:700;
+  font-size:13px;
+  line-height:1;
+  white-space:nowrap;
 }
-.paid { background: var(--success); color: var(--bg); }
-.pending { background: var(--warning); color: var(--bg); }
-.failed { background: var(--danger); color: var(--bg); }
-.income { color: var(--success) !important; }
-.expense { color: var(--danger) !important; }
-.badge.income { background: var(--success); color: var(--bg); }
-.badge.expense { background: var(--danger); color: var(--bg); }
+/* Loại */
+.badge--income{ background:#22c55e; color:#ffffff; }
+.badge--expense{ background:#ef4444; color:#ffffff; }
+/* Trạng thái */
+.badge--paid{ background:#22c55e; color:#ffffff; }
+.badge--pending{ background:#f59e0b; color:#ffffff; }
+.badge--failed{ background:#ef4444; color:#ffffff; }
+/* Chỉ dùng .income/.expense cho số tiền, không dùng cho badge loại */
+td.income { color: var(--success); }
+td.expense { color: var(--danger); }
 
 /* Table */
 .table-wrap {
