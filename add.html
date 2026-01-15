@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,85 +10,136 @@
   <div class="layout">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="logo">Quản Lý Tài Chính</div>
-      <nav>
-        <a href="index.html">Tổng Quan</a>
-        <a href="transactions.html">Giao Dịch</a>
-        <a href="add.html" class="active">Thêm Giao Dịch</a>
+      <div class="logo">
+        <div class="logo-badge">QL</div>
+        <span class="logo-text">Quản Lý Tài Chính</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-label="Tổng Quan">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5M5 10.5V21h4v-5.5h6V21h4V10.5"></path></svg>
+          </span>
+          <span class="nav__text">Tổng Quan</span>
+        </a>
+        <a href="transactions.html" class="nav__link" data-label="Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 12h18M3 19h18M7 5v14"></path></svg>
+          </span>
+          <span class="nav__text">Giao Dịch</span>
+        </a>
+        <a href="add.html" class="nav__link active" data-label="Thêm Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </span>
+          <span class="nav__text">Thêm Giao Dịch</span>
+        </a>
       </nav>
     </aside>
+
     <!-- Main Content -->
     <main>
       <div class="topbar">
         <h1>Thêm Giao Dịch</h1>
         <div class="topbar-actions">
+          <a class="btn btn--ghost" href="transactions.html">Quay lại danh sách</a>
           <div class="avatar"></div>
         </div>
       </div>
-      <!-- Form Section -->
-      <section class="card form-card">
-        <form>
-          <div class="grid-2">
-            <div>
-              <label for="amount">Số Tiền</label>
-              <input type="number" id="amount" class="input" placeholder="Nhập số tiền">
-            </div>
-            <div>
-              <label for="type">Loại</label>
-              <select id="type" class="input">
-                <option>Thu</option>
-                <option>Chi</option>
-              </select>
-            </div>
-            <div>
-              <label for="category">Danh Mục</label>
-              <select id="category" class="input">
-                <option>Ăn uống</option>
-                <option>Tiện ích</option>
-                <option>Sức khỏe</option>
-                <option>Du lịch</option>
-                <option>Giáo dục</option>
-                <option>Thu nhập</option>
-                <option>Khác</option>
-              </select>
-            </div>
-            <div>
-              <label for="date">Ngày</label>
-              <input type="date" id="date" class="input">
-            </div>
-            <div>
-              <label for="description">Mô Tả</label>
-              <input type="text" id="description" class="input" placeholder="Nhập mô tả">
-            </div>
-            <div>
-              <label for="payment">Phương Thức Thanh Toán</label>
-              <select id="payment" class="input">
-                <option>Tiền mặt</option>
-                <option>Thẻ</option>
-                <option>Chuyển khoản</option>
-                <option>Khác</option>
-              </select>
-            </div>
-            <div>
-              <label for="status">Trạng Thái</label>
-              <select id="status" class="input">
-                <option>Đã thanh toán</option>
-                <option>Chờ xử lý</option>
-                <option>Thất bại</option>
-              </select>
-            </div>
-            <div>
-              <label for="note">Ghi Chú</label>
-              <textarea id="note" class="input" rows="2" placeholder="Nhập ghi chú"></textarea>
-            </div>
+
+      <section class="grid grid--two">
+        <!-- Form Section -->
+        <section class="card form-card">
+          <div class="section-heading">
+            <h2>Thông tin giao dịch</h2>
+            <span class="muted">Điền nhanh các trường bắt buộc</span>
           </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Lưu Giao Dịch</button>
-            <a href="transactions.html" class="btn btn-outline">Hủy</a>
+          <form>
+            <div class="form-grid">
+              <div>
+                <label for="amount" class="muted">Số tiền</label>
+                <input type="number" id="amount" class="input" placeholder="Nhập số tiền">
+              </div>
+              <div>
+                <label for="type" class="muted">Loại</label>
+                <select id="type" class="select">
+                  <option>Thu</option>
+                  <option>Chi</option>
+                </select>
+              </div>
+              <div>
+                <label for="category" class="muted">Danh mục</label>
+                <select id="category" class="select">
+                  <option>Ăn uống</option>
+                  <option>Tiện ích</option>
+                  <option>Sức khỏe</option>
+                  <option>Du lịch</option>
+                  <option>Giáo dục</option>
+                  <option>Thu nhập</option>
+                  <option>Khác</option>
+                </select>
+              </div>
+              <div>
+                <label for="date" class="muted">Ngày</label>
+                <input type="date" id="date" class="input">
+              </div>
+              <div>
+                <label for="description" class="muted">Mô tả</label>
+                <input type="text" id="description" class="input" placeholder="Nhập mô tả">
+              </div>
+              <div>
+                <label for="payment" class="muted">Phương thức thanh toán</label>
+                <select id="payment" class="select">
+                  <option>Tiền mặt</option>
+                  <option>Thẻ</option>
+                  <option>Chuyển khoản</option>
+                  <option>Khác</option>
+                </select>
+              </div>
+              <div>
+                <label for="status" class="muted">Trạng thái</label>
+                <select id="status" class="select">
+                  <option>Đã thanh toán</option>
+                  <option>Chờ xử lý</option>
+                  <option>Thất bại</option>
+                </select>
+              </div>
+              <div>
+                <label for="note" class="muted">Ghi chú</label>
+                <textarea id="note" class="input" rows="3" placeholder="Nhập ghi chú"></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Lưu Giao Dịch</button>
+              <button type="button" class="btn btn--ghost">Hủy</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Preview -->
+        <section class="card preview-card">
+          <div class="section-heading">
+            <h2>Preview tóm tắt</h2>
+            <span class="muted">Cập nhật theo thông tin nhập (tĩnh)</span>
           </div>
-        </form>
+          <div class="grid" style="gap: var(--space-2);">
+            <div class="muted">Ngày</div>
+            <div>2026-01-12</div>
+            <div class="muted">Mô tả</div>
+            <div>Ăn trưa đối tác</div>
+            <div class="muted">Loại</div>
+            <div><span class="badge badge--expense">Chi tiêu</span></div>
+            <div class="muted">Số tiền</div>
+            <div class="money tx-amount expense">- 85.000 ₫</div>
+            <div class="muted">Trạng thái</div>
+            <div><span class="badge badge--pending">Chờ xử lý</span></div>
+          </div>
+        </section>
       </section>
     </main>
   </div>
 </body>
+<div class="loading-overlay" aria-hidden="true">
+  <div class="loader"></div>
+  <p class="loading-text">Đang tải dữ liệu...</p>
+</div>
 </html>

@@ -1,5 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,47 +10,80 @@
   <div class="layout">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="logo">Quản Lý Tài Chính</div>
-      <nav>
-        <a href="index.html">Tổng Quan</a>
-        <a href="transactions.html" class="active">Giao Dịch</a>
-        <a href="add.html">Thêm Giao Dịch</a>
+      <div class="logo">
+        <div class="logo-badge">QL</div>
+        <span class="logo-text">Quản Lý Tài Chính</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-label="Tổng Quan">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5M5 10.5V21h4v-5.5h6V21h4V10.5"></path></svg>
+          </span>
+          <span class="nav__text">Tổng Quan</span>
+        </a>
+        <a href="transactions.html" class="nav__link active" data-label="Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 12h18M3 19h18M7 5v14"></path></svg>
+          </span>
+          <span class="nav__text">Giao Dịch</span>
+        </a>
+        <a href="add.html" class="nav__link" data-label="Thêm Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </span>
+          <span class="nav__text">Thêm Giao Dịch</span>
+        </a>
       </nav>
     </aside>
+
     <!-- Main Content -->
     <main>
       <div class="topbar">
         <h1>Giao Dịch</h1>
         <div class="topbar-actions">
+          <a class="btn btn--primary" href="add.html">+ Thêm giao dịch</a>
           <div class="avatar"></div>
         </div>
       </div>
+
       <!-- Filter Row -->
-      <section class="card filter-row">
-        <input type="text" class="input" placeholder="Tìm kiếm...">
-        <select class="input">
-          <option>Tất cả</option>
-          <option>Thu</option>
-          <option>Chi</option>
-        </select>
-        <select class="input">
-          <option>Tất cả</option>
-          <option>Đã thanh toán</option>
-          <option>Chờ xử lý</option>
-          <option>Thất bại</option>
-        </select>
-        <button class="btn btn-outline">Xuất</button>
+      <section class="card">
+        <div class="section-heading">
+          <h2>Bộ lọc</h2>
+          <span class="muted">Tùy chỉnh nhanh</span>
+        </div>
+        <div class="filter-bar">
+          <input type="text" class="input" placeholder="Tìm kiếm giao dịch...">
+          <select class="select">
+            <option>Tất cả loại</option>
+            <option>Thu</option>
+            <option>Chi</option>
+          </select>
+          <select class="select">
+            <option>Tất cả trạng thái</option>
+            <option>Đã thanh toán</option>
+            <option>Chờ xử lý</option>
+            <option>Thất bại</option>
+          </select>
+          <input type="date" class="input" placeholder="Từ ngày">
+          <input type="date" class="input" placeholder="Đến ngày">
+          <div class="filter-actions">
+            <button class="btn btn--ghost">Reset</button>
+            <button class="btn btn--primary">Xuất</button>
+          </div>
+        </div>
       </section>
+
       <!-- Table Section -->
-      <div class="table-wrap card">
-        <table>
+      <section class="card table-wrap">
+        <table class="table">
           <thead>
             <tr>
               <th>Ngày</th>
               <th>Mô tả</th>
               <th>Danh mục</th>
               <th>Loại</th>
-              <th>Số tiền</th>
+              <th class="amount">Số tiền</th>
               <th>Trạng thái</th>
             </tr>
           </thead>
@@ -60,7 +93,7 @@
               <td>Lương</td>
               <td>Thu nhập</td>
               <td><span class="badge badge--income">Thu nhập</span></td>
-              <td class="income">+ $2,000</td>
+              <td class="amount"><span class="money tx-amount income">+ 2.000.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
@@ -68,7 +101,7 @@
               <td>Mua sắm</td>
               <td>Ăn uống</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $120</td>
+              <td class="amount"><span class="money tx-amount expense">- 120.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
@@ -76,7 +109,7 @@
               <td>Tiền điện</td>
               <td>Tiện ích</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $60</td>
+              <td class="amount"><span class="money tx-amount expense">- 60.000 ₫</span></td>
               <td><span class="badge badge--pending">Chờ xử lý</span></td>
             </tr>
             <tr>
@@ -84,15 +117,15 @@
               <td>Làm thêm</td>
               <td>Thu nhập</td>
               <td><span class="badge badge--income">Thu nhập</span></td>
-              <td class="income">+ $500</td>
+              <td class="amount"><span class="money tx-amount income">+ 500.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
               <td>2026-01-06</td>
-              <td>Phòng gym</td>
+              <td>Phí gym</td>
               <td>Sức khỏe</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $40</td>
+              <td class="amount"><span class="money tx-amount expense">- 40.000 ₫</span></td>
               <td><span class="badge badge--failed">Thất bại</span></td>
             </tr>
             <tr>
@@ -100,7 +133,7 @@
               <td>Sách</td>
               <td>Giáo dục</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $30</td>
+              <td class="amount"><span class="money tx-amount expense">- 30.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
@@ -108,7 +141,7 @@
               <td>Quà tặng</td>
               <td>Thu nhập</td>
               <td><span class="badge badge--income">Thu nhập</span></td>
-              <td class="income">+ $100</td>
+              <td class="amount"><span class="money tx-amount income">+ 100.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
@@ -116,7 +149,7 @@
               <td>Đi lại</td>
               <td>Du lịch</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $15</td>
+              <td class="amount"><span class="money tx-amount expense">- 15.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
             <tr>
@@ -124,7 +157,7 @@
               <td>Internet</td>
               <td>Tiện ích</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $25</td>
+              <td class="amount"><span class="money tx-amount expense">- 25.000 ₫</span></td>
               <td><span class="badge badge--pending">Chờ xử lý</span></td>
             </tr>
             <tr>
@@ -132,14 +165,33 @@
               <td>Ăn ngoài</td>
               <td>Ăn uống</td>
               <td><span class="badge badge--expense">Chi tiêu</span></td>
-              <td class="expense">- $50</td>
+              <td class="amount"><span class="money tx-amount expense">- 50.000 ₫</span></td>
               <td><span class="badge badge--paid">Đã thanh toán</span></td>
             </tr>
           </tbody>
         </table>
-      </div>
+
+        <div class="table-foot">
+          <div class="page-size">
+            <span class="muted">Hiển thị:</span>
+            <button class="active">10</button>
+            <button>20</button>
+            <button>50</button>
+          </div>
+          <div class="pagination">
+            <span class="muted">Trang:</span>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button aria-label="Tiếp">…</button>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </body>
+<div class="loading-overlay" aria-hidden="true">
+  <div class="loader"></div>
+  <p class="loading-text">Đang tải dữ liệu...</p>
+</div>
 </html>
-

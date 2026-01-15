@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,108 +10,192 @@
   <div class="layout">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <div class="logo">Quản Lý Tài Chính</div>
-      <nav>
-        <a href="index.html" class="active">Tổng Quan</a>
-        <a href="transactions.html">Giao Dịch</a>
-        <a href="add.html">Thêm Giao Dịch</a>
+      <div class="logo">
+        <div class="logo-badge">QL</div>
+        <span class="logo-text">Quản Lý Tài Chính</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html" class="nav__link active" data-label="Tổng Quan">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5 12 3l9 6.5M5 10.5V21h4v-5.5h6V21h4V10.5"></path></svg>
+          </span>
+          <span class="nav__text">Tổng Quan</span>
+        </a>
+        <a href="transactions.html" class="nav__link" data-label="Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 12h18M3 19h18M7 5v14"></path></svg>
+          </span>
+          <span class="nav__text">Giao Dịch</span>
+        </a>
+        <a href="add.html" class="nav__link" data-label="Thêm Giao Dịch">
+          <span class="nav__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+          </span>
+          <span class="nav__text">Thêm Giao Dịch</span>
+        </a>
       </nav>
     </aside>
+
     <!-- Main Content -->
     <main>
       <div class="topbar">
         <h1>Tổng Quan</h1>
         <div class="topbar-actions">
-          <a href="add.html" class="btn btn-primary">+ Thêm Giao Dịch</a>
+          <a class="btn btn--ghost" href="transactions.html">Xem giao dịch</a>
+          <a class="btn btn--primary" href="add.html">+ Thêm giao dịch</a>
           <div class="avatar"></div>
         </div>
       </div>
-      <!-- Cards Section -->
-      <section class="grid-3">
-        <div class="card">
-          <div class="card-title">Tổng Thu</div>
-          <div class="card-value income">$5,200</div>
-        </div>
-        <div class="card">
-          <div class="card-title">Tổng Chi</div>
-          <div class="card-value expense">$3,100</div>
-        </div>
-        <div class="card">
-          <div class="card-title">Số Dư</div>
-          <div class="card-value">$2,100</div>
-        </div>
+
+      <!-- Stats Cards -->
+      <section class="grid grid--stats">
+        <article class="card stat-card">
+          <div class="section-heading">
+            <span class="stat-label">Tổng Thu</span>
+            <span class="badge badge--income">+2.4%</span>
+          </div>
+          <div class="stat-value">5.200.000 ₫</div>
+          <div class="stat-meta positive">so với tuần trước: +2.4%</div>
+          <div class="sparkline">
+            <span class="sparkline-bar" style="height: 45%;"></span>
+            <span class="sparkline-bar" style="height: 60%;"></span>
+            <span class="sparkline-bar" style="height: 55%;"></span>
+            <span class="sparkline-bar is-max" style="height: 90%;"></span>
+            <span class="sparkline-bar" style="height: 70%;"></span>
+            <span class="sparkline-bar" style="height: 65%;"></span>
+            <span class="sparkline-bar" style="height: 58%;"></span>
+          </div>
+        </article>
+        <article class="card stat-card">
+          <div class="section-heading">
+            <span class="stat-label">Tổng Chi</span>
+            <span class="badge badge--expense">-1.1%</span>
+          </div>
+          <div class="stat-value">3.100.000 ₫</div>
+          <div class="stat-meta negative">so với tuần trước: -1.1%</div>
+          <div class="sparkline">
+            <span class="sparkline-bar" style="height: 65%;"></span>
+            <span class="sparkline-bar" style="height: 70%;"></span>
+            <span class="sparkline-bar is-max" style="height: 92%;"></span>
+            <span class="sparkline-bar" style="height: 75%;"></span>
+            <span class="sparkline-bar" style="height: 60%;"></span>
+            <span class="sparkline-bar" style="height: 55%;"></span>
+            <span class="sparkline-bar" style="height: 50%;"></span>
+          </div>
+        </article>
+        <article class="card stat-card">
+          <div class="section-heading">
+            <span class="stat-label">Số Dư</span>
+            <span class="badge badge--pending">Cập nhật</span>
+          </div>
+          <div class="stat-value">2.100.000 ₫</div>
+          <div class="stat-meta">so với tuần trước: +1.3%</div>
+          <div class="sparkline">
+            <span class="sparkline-bar" style="height: 40%;"></span>
+            <span class="sparkline-bar" style="height: 55%;"></span>
+            <span class="sparkline-bar" style="height: 62%;"></span>
+            <span class="sparkline-bar is-max" style="height: 85%;"></span>
+            <span class="sparkline-bar" style="height: 78%;"></span>
+            <span class="sparkline-bar" style="height: 70%;"></span>
+            <span class="sparkline-bar" style="height: 60%;"></span>
+          </div>
+        </article>
       </section>
-      <!-- Chart Section -->
+
+      <!-- Weekly chart -->
       <section class="card chart-card">
-        <div class="card-title">Chi Tiêu Trong Tuần</div>
+        <div class="section-heading">
+          <h2>Chi tiêu theo tuần</h2>
+          <span class="muted">VND</span>
+        </div>
         <div class="bar-chart">
           <div class="bar-group">
-            <div class="bar expense" style="height: 60px;"></div>
-            <div class="bar-label">Thứ 2</div>
+            <div class="bar" data-label="Th 2" data-value="410.000 ₫" style="height: 50%;"></div>
+            <div class="bar-label">Th 2</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 90px;"></div>
-            <div class="bar-label">Thứ 3</div>
+            <div class="bar" data-label="Th 3" data-value="520.000 ₫" style="height: 62%;"></div>
+            <div class="bar-label">Th 3</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 40px;"></div>
-            <div class="bar-label">Thứ 4</div>
+            <div class="bar" data-label="Th 4" data-value="360.000 ₫" style="height: 43%;"></div>
+            <div class="bar-label">Th 4</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 110px;"></div>
-            <div class="bar-label">Thứ 5</div>
+            <div class="bar is-max" data-label="Th 5" data-value="620.000 ₫" style="height: 78%;"></div>
+            <div class="bar-label">Th 5</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 80px;"></div>
-            <div class="bar-label">Thứ 6</div>
+            <div class="bar" data-label="Th 6" data-value="540.000 ₫" style="height: 68%;"></div>
+            <div class="bar-label">Th 6</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 50px;"></div>
-            <div class="bar-label">Thứ 7</div>
+            <div class="bar" data-label="Th 7" data-value="330.000 ₫" style="height: 41%;"></div>
+            <div class="bar-label">Th 7</div>
           </div>
           <div class="bar-group">
-            <div class="bar expense" style="height: 70px;"></div>
+            <div class="bar" data-label="CN" data-value="480.000 ₫" style="height: 60%;"></div>
             <div class="bar-label">CN</div>
           </div>
         </div>
       </section>
-      <!-- Recent Transactions Section -->
+
+      <!-- Recent transactions -->
       <section class="card">
-        <div class="card-title">Giao Dịch Gần Đây</div>
-        <ul class="transaction-list">
-          <li>
-            <span class="tx-name">Lương</span>
-            <span class="tx-date">2026-01-10</span>
-            <span class="tx-amount income">+ $2,000</span>
-            <span class="badge paid">Đã thanh toán</span>
-          </li>
-          <li>
-            <span class="tx-name">Mua sắm</span>
-            <span class="tx-date">2026-01-09</span>
-            <span class="tx-amount expense">- $120</span>
-            <span class="badge paid">Đã thanh toán</span>
-          </li>
-          <li>
-            <span class="tx-name">Tiền điện</span>
-            <span class="tx-date">2026-01-08</span>
-            <span class="tx-amount expense">- $60</span>
-            <span class="badge pending">Chờ xử lý</span>
-          </li>
-          <li>
-            <span class="tx-name">Làm thêm</span>
-            <span class="tx-date">2026-01-07</span>
-            <span class="tx-amount income">+ $500</span>
-            <span class="badge paid">Đã thanh toán</span>
-          </li>
-          <li>
-            <span class="tx-name">Phòng gym</span>
-            <span class="tx-date">2026-01-06</span>
-            <span class="tx-amount expense">- $40</span>
-            <span class="badge failed">Thất bại</span>
-          </li>
-        </ul>
+        <div class="section-heading">
+          <h2>Giao dịch gần đây</h2>
+          <a class="btn btn--ghost" href="transactions.html">Xem tất cả</a>
+        </div>
+        <div class="table-wrap">
+          <table class="table recent-table">
+            <thead>
+              <tr>
+                <th>Mô tả</th>
+                <th class="col-date">Ngày</th>
+                <th class="col-amount">Số tiền</th>
+                <th class="col-status">Trạng thái</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lương tháng</td>
+                <td class="col-date">2026-01-10</td>
+                <td class="col-amount"><span class="money tx-amount income">+ 2.000.000 ₫</span></td>
+                <td class="col-status"><span class="badge badge--paid">Đã thanh toán</span></td>
+              </tr>
+              <tr>
+                <td>Mua sắm</td>
+                <td class="col-date">2026-01-09</td>
+                <td class="col-amount"><span class="money tx-amount expense">- 120.000 ₫</span></td>
+                <td class="col-status"><span class="badge badge--paid">Đã thanh toán</span></td>
+              </tr>
+              <tr>
+                <td>Tiền điện</td>
+                <td class="col-date">2026-01-08</td>
+                <td class="col-amount"><span class="money tx-amount expense">- 60.000 ₫</span></td>
+                <td class="col-status"><span class="badge badge--pending">Chờ xử lý</span></td>
+              </tr>
+              <tr>
+                <td>Làm thêm</td>
+                <td class="col-date">2026-01-07</td>
+                <td class="col-amount"><span class="money tx-amount income">+ 500.000 ₫</span></td>
+                <td class="col-status"><span class="badge badge--paid">Đã thanh toán</span></td>
+              </tr>
+              <tr>
+                <td>Phí gym</td>
+                <td class="col-date">2026-01-06</td>
+                <td class="col-amount"><span class="money tx-amount expense">- 40.000 ₫</span></td>
+                <td class="col-status"><span class="badge badge--failed">Thất bại</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
   </div>
 </body>
+<div class="loading-overlay" aria-hidden="true">
+  <div class="loader"></div>
+  <p class="loading-text">Đang tải dữ liệu...</p>
+</div>
 </html>
